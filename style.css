@@ -152,3 +152,89 @@ button:hover {
   margin: 0 auto 10px auto;
   border-radius: 6px;
 }
+
+/* Contenedor del formulario */
+#checkout {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Título */
+#checkout h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
+  font-size: 1.5em;
+}
+
+/* Etiquetas */
+#checkout label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Campos de entrada */
+#checkout input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al enfocar */
+#checkout input:focus {
+  border-color: #0077cc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,119,204,0.3);
+}
+
+/* Botón de envío */
+#checkout button {
+  margin-top: 20px;
+  width: 100%;
+  background: #43a047;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover en el botón */
+#checkout button:hover {
+  background: #2e7d32;
+}
+
+/* Pantalla de confirmación */
+#confirmation {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #e8f5e9;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#confirmation h2 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+#confirmation p {
+  white-space: pre-line; /* mantiene saltos de línea */
+  text-align: left;
+  font-size: 1em;
+  color: #333;
+}
