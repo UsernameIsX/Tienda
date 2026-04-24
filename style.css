@@ -144,3 +144,11 @@ button:hover {
   background: #0077cc;
   color: #fff;
 }
+
+.product-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 6px;
+}

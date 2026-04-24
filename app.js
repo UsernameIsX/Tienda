@@ -101,3 +101,64 @@ loginBtn.addEventListener("click", () => {
 logoutBtn.addEventListener("click", () => {
   client.logout({ logoutParams: { returnTo: location.origin } });
 });
+
+// Mostrar formulario después de agregar productos
+document.getElementById("cart-btn").addEventListener("click", () => {
+  const cartSection = document.getElementById("cart");
+  cartSection.style.display = cartSection.style.display === "none" ? "block" : "none";
+
+  // Mostrar formulario si hay productos en el carrito
+  if (cart.length > 0) {
+    document.getElementById("checkout").style.display = "block";
+  } else {
+    document.getElementById("checkout").style.display = "none";
+  }
+});
+
+// Validaciones del formulario
+document.getElementById("checkout-form").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+
+  // Validación de correo
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Por favor ingresa un correo válido.");
+    return;
+  }
+
+  // Validación de teléfono (solo números y longitud mínima)
+  const phoneRegex = /^[0-9]{8,15}$/;
+  if (!phoneRegex.test(phone)) {
+    alert("El teléfono debe contener solo números y tener entre 8 y 15 dígitos.");
+    return;
+  }
+
+  // Si todo está correcto, mostrar confirmación
+  const confirmation = document.getElementById("confirmation");
+  const details = document.getElementById("confirmation-details");
+
+  let resumen = "Productos comprados:\n";
+  let total = 0;
+  cart.forEach(item => {
+    resumen += `- ${item.name} ($${item.price})\n`;
+    total += item.price;
+  });
+
+  resumen += `\nTotal: $${total}\n\n`;
+  resumen += `Nombre: ${name}\nDirección: ${address}\nCorreo: ${email}\nTeléfono: ${phone}`;
+
+  details.textContent = resumen;
+
+  document.getElementById("checkout").style.display = "none";
+  document.getElementById("cart").style.display = "none";
+  confirmation.style.display = "block";
+
+  // Vaciar carrito después de compra
+  cart = [];
+  updateCart();
+});

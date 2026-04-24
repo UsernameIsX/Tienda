@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Virtual SportyStyle</title>
+    <title>Tienda Virtual</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-    <h1>Mi Tienda Virtual</h1>
+    <h1>Tienda Virtual SportyStyle</h1>
     <nav>
         <button id="login-btn">Iniciar Sesión</button>
         <button id="logout-btn" style="display:none;">Cerrar Sesión</button>
@@ -104,5 +104,30 @@
     displayView("unauthenticated");
 })();
 </script>
+
+<section id="checkout" style="display:none;">
+    <h2>Datos de envío y pago</h2>
+    <form id="checkout-form">
+    <label>Nombre completo:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label>Dirección de envío:</label>
+    <input type="text" id="address" required><br><br>
+
+    <label>Correo electrónico:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label>Teléfono:</label>
+    <input type="text" id="phone" required><br><br>
+
+    <button type="submit">Finalizar compra</button>
+    </form>
+</section>
+
+<section id="confirmation" style="display:none;">
+    <h2>¡Gracias por tu compra!</h2>
+    <p id="confirmation-details"></p>
+</section>
+
 </body>
 </html>
