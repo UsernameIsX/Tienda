@@ -238,3 +238,7 @@ button:hover {
   font-size: 1em;
   color: #333;
 }
+
+#view-unauthenticated {
+  display: none !important;
+}

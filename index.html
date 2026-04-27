@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Virtual</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.18/auth0-spa-js.production.js"></script>
 </head>
 <body>
     <header>
     <h1>Tienda Virtual SportyStyle</h1>
     <nav>
+        <div id="auth-ui">
         <button id="login-btn">Iniciar Sesión</button>
         <button id="logout-btn" style="display:none;">Cerrar Sesión</button>
         <span id="user-info"></span>
         <button id="cart-btn">🛒 Carrito (<span id="cart-count">0</span>)</button>
+        </div>
     </nav>
     </header>
 
@@ -63,7 +67,6 @@
     <button onclick="client.loginWithRedirect()">Login</button>
 </div>
 
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.18/auth0-spa-js.production.js"></script>
     <script src="app.js"></script>
 
 <script>
@@ -75,7 +78,7 @@
     window.client = await auth0.createAuth0Client({
         domain: 'dev-0amwgx56x45lz7qg.us.auth0.com',
         clientId: 'XSVf6w9gS6UuJmBiuXulDiMz7GS6RiDL',
-        authorizationParams: { redirect_uri: location.origin },
+        authorizationParams: { redirect_uri:location.origin },
     });
 
     // Handle errors returned by Auth0 after a redirect

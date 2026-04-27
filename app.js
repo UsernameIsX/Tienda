@@ -68,6 +68,9 @@ const userInfo = document.getElementById("user-info");
     authorizationParams: { redirect_uri: location.origin },
   });
 
+  // Variable global para almacenar el cliente de Auth0
+let auth0Client = null;
+
   // Manejo de errores en el redirect
   if (location.search.includes("error=")) {
     const params = new URLSearchParams(location.search);
